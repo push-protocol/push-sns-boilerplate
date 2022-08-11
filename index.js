@@ -5,19 +5,6 @@ app.use(express.json());
 const fetch = require('node-fetch');
 const Validator = require('sns-payload-validator');
 
-const {
-    SNSClient,
-    PublishCommand
-} = require("@aws-sdk/client-sns");
-
-const snsClient = new SNSClient({
-    credentials: {
-        accessKeyId: process.env.SNS_AWS_ACCESS_KEY,
-        secretAccessKey: process.env.SNS_AWS_SECRET_KEY
-    },
-    region: process.env.SNS_AWS_REGION
-});
-
 app.get("/status", (req, res) => {
     res.status(200).json({
         status: "ok"
@@ -81,28 +68,6 @@ app.post("/sns/notifications", async (req, res) => {
 
     console.log('Received message from sns', payload);
     res.sendStatus(200);
-});
-
-app.post("/sns/publish", async (req, res) => {
-    let params = {
-        Subject: req.body.subject,
-        Message: req.body.message,
-        TopicArn: process.env.SNS_AWS_TOPIC_ARN,
-    };
-
-    try {
-        const data = await snsClient.send(new PublishCommand(params));
-        res.status(200).json({
-            status: "ok",
-            data: data,
-        });
-    } catch (err) {
-        console.log("Error", err);
-        res.status(500).json({
-            status: "500",
-            err: err,
-        });
-    }
 });
 
 
