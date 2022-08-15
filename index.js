@@ -11,7 +11,8 @@ app.get("/status", (req, res) => {
     });
 });
 
-app.post("/sns/notifications", async (req, res) => {
+
+app.post("/sns", async (req, res) => {
     const buffers = [];
 
     for await (const chunk of req) {
