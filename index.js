@@ -5,13 +5,6 @@ app.use(express.json());
 const fetch = require('node-fetch');
 const Validator = require('sns-payload-validator');
 
-app.get("/status", (req, res) => {
-    res.status(200).json({
-        status: "ok"
-    });
-});
-
-
 app.post("/sns", async (req, res) => {
     const buffers = [];
 
@@ -42,16 +35,15 @@ app.post("/sns", async (req, res) => {
     }
 
     if (payload.Type === 'Notification') {
-        console.log('received sns notification message\n', payload);
+        console.log('Notification :: \n', payload);
         console.log('------------------------------------------------------');
         console.log('------------------------------------------------------');
         console.log('------------------------------------------------------');
         res.sendStatus(200);
         return;
-    }
-    if (payload.Type === 'SubscriptionConfirmation') {
+    } else if (payload.Type === 'SubscriptionConfirmation') {
         const url = payload.SubscribeURL;
-        console.log("SubscribeURL :: " + url)
+        console.log("SubscriptionConfirmation :: \n" + payload)
         const response = await fetch(url);
         if (response.status === 200) {
             console.log('Subscription confirmed');
@@ -65,12 +57,11 @@ app.post("/sns", async (req, res) => {
             res.sendStatus(500);
             return;
         }
+    } else {
+        console.log('Received message from sns', payload);
+        res.sendStatus(200);
     }
-
-    console.log('Received message from sns', payload);
-    res.sendStatus(200);
 });
-
 
 const port = 6000;
 app.listen(port, () => {
