@@ -1,3 +1,4 @@
+
 # PUSH SNS Template
 
 This template can be used a starting point to consume the feeds from the PUSH SNS Topic.
@@ -47,5 +48,64 @@ This is a one-time message confirming if the SNS subscription is successful.
         UnsubscribeURL: 'https://sns.us-east-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-east-1:293359341249:dev-epns-notifications:cc473de2-b46e-462c-95d4-178580487a26'
     }
 
-Message is field in the above JSON is the actual notification sent from the EPNS in JSON stringified format.
+**Message** is field in the above JSON is the actual notification sent from the EPNS in JSON stringified format.
 
+#### Message
+
+A sample message when converted to JSON looks like below
+
+      {
+	  	"sid": 121,
+	  	"users": ["0x35B84d6848D16415177c64D64504663b998A6ab4"],
+	  	"payload": {
+	  		"apns": {
+	  			"payload": {
+	  				"aps": {
+	  					"category": "withappicon",
+	  					"mutable-content": 1,
+	  					"content-available": 1
+	  				}
+	  			},
+	  			"fcm_options": {
+	  				"image": "https://gateway.ipfs.io/ipfs/QmQM97KUTGTT6nt6Xd7xAJpdGB8adiJ1LVUJoN8RoFUYfx"
+	  			}
+	  		},
+	  		"data": {
+	  			"app": "Shunya",
+	  			"sid": "121",
+	  			"url": "https://shunya.fi/",
+	  			"acta": "https://shunya.fi",
+	  			"aimg": "https://shunya.fi/_nuxt/img/shunya.cfece51.png",
+	  			"amsg": "Your portfolio is up by 0.08% since yesterday.",
+	  			"asub": "Assets Daily",
+	  			"icon": "https://gateway.ipfs.io/ipfs/QmQM97KUTGTT6nt6Xd7xAJpdGB8adiJ1LVUJoN8RoFUYfx",
+	  			"type": "3",
+	  			"epoch": "1660554419",
+	  			"appbot": "0",
+	  			"hidden": "0",
+	  			"secret": ""
+	  		},
+	  		"android": {
+	  			"notification": {
+	  				"icon": "@drawable/ic_stat_name",
+	  				"color": "#e20880",
+	  				"image": "https://gateway.ipfs.io/ipfs/QmQM97KUTGTT6nt6Xd7xAJpdGB8adiJ1LVUJoN8RoFUYfx",
+	  				"default_vibrate_timings": true
+	  			}
+	  		},
+	  		"notification": {
+	  			"body": "Your portfolio is up by 0.08% since yesterday.",
+	  			"title": "Shunya - Assets Daily"
+	  		}
+	  	},
+	  	"epoch": "1660554419",
+	  	"topic": "Notification",
+	  	"subtopic": "Channel"
+	  }
+
+- **sid**       - unique id from the push
+- **users**     - list of wallet addresses for which the notification needs to be delivered
+- **payload**   - actual payload that needs to be delivered to the user's device
+- **epoch**     - timestamp when the payload is generated
+- **topic**     -  type of payload, i.e. Notification, Chat etc
+- **subtopic**  -  mode of delivery, i.e. Channel or User level
