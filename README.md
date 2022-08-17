@@ -1,7 +1,7 @@
 
-# EPNS SNS Template
+# EPNS SNS Boilerplate
 
-This template can be used a starting point to consume the feeds from the EPNS SNS Topic.
+This boilerplate can be used a starting point to consume the feeds from the EPNS SNS Topic.
 
 # SNS client
 ​
