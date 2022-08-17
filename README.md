@@ -1,7 +1,7 @@
 
-# PUSH SNS Template
+# Push SNS Template
 
-This template can be used a starting point to consume the feeds from the PUSH SNS Topic.
+This template can be used a starting point to consume the feeds from the Push SNS Topic.
 
 # SNS client
 ​
