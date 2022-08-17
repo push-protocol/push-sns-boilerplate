@@ -58,18 +58,6 @@ A sample message when converted to JSON looks like below
 	  	"sid": 121,
 	  	"users": ["0x35B84d6848D16415177c64D64504663b998A6ab4"],
 	  	"payload": {
-	  		"apns": {
-	  			"payload": {
-	  				"aps": {
-	  					"category": "withappicon",
-	  					"mutable-content": 1,
-	  					"content-available": 1
-	  				}
-	  			},
-	  			"fcm_options": {
-	  				"image": "https://gateway.ipfs.io/ipfs/QmQM97KUTGTT6nt6Xd7xAJpdGB8adiJ1LVUJoN8RoFUYfx"
-	  			}
-	  		},
 	  		"data": {
 	  			"app": "Shunya",
 	  			"sid": "121",
@@ -84,14 +72,6 @@ A sample message when converted to JSON looks like below
 	  			"appbot": "0",
 	  			"hidden": "0",
 	  			"secret": ""
-	  		},
-	  		"android": {
-	  			"notification": {
-	  				"icon": "@drawable/ic_stat_name",
-	  				"color": "#e20880",
-	  				"image": "https://gateway.ipfs.io/ipfs/QmQM97KUTGTT6nt6Xd7xAJpdGB8adiJ1LVUJoN8RoFUYfx",
-	  				"default_vibrate_timings": true
-	  			}
 	  		},
 	  		"notification": {
 	  			"body": "Your portfolio is up by 0.08% since yesterday.",
