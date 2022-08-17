@@ -1,7 +1,7 @@
 
-# Push SNS Template
+# EPNS SNS Template
 
-This template can be used a starting point to consume the feeds from the Push SNS Topic.
+This template can be used a starting point to consume the feeds from the EPNS SNS Topic.
 
 # SNS client
 ​
