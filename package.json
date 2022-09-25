@@ -17,6 +17,7 @@
     "express": "^4.18.1",
     "lodash": "^4.17.21",
     "node-fetch": "^2.6.7",
+    "node-telegram-bot-api": "^0.59.0",
     "parse-url": "^8.0.0",
     "sns-payload-validator": "^1.0.4"
   },
