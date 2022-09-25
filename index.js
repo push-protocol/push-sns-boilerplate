@@ -39,6 +39,10 @@ app.post("/sns", async (req, res) => {
         console.log('------------------------------------------------------');
         console.log('------------------------------------------------------');
         console.log('------------------------------------------------------');
+
+        const obj = JSON.parse(payload['Message']);
+        console.log("messaged received from EPNS :: " + obj['payload']['data']['amsg'])
+
         res.sendStatus(200);
         return;
     } else if (payload.Type === 'SubscriptionConfirmation') {
