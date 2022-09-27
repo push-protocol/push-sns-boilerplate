@@ -1,8 +1,8 @@
 # Example
 [https://docs.epns.io/developers/developer-guides/receiving-notifications/receiving-via-aws-sns](Example of AWS SNS for Web2.5 platforms)
-# EPNS SNS Boilerplate
+# PUSH SNS Boilerplate
 
-This boilerplate can be used a starting point to consume the feeds from the EPNS SNS Topic.
+This boilerplate can be used a starting point to consume the feeds from the PUSH SNS Topic.
 
 # SNS client
 ​
@@ -12,7 +12,7 @@ Please note that this notification service template is to push data to your serv
 ​
 ## How to authenticate with the `AWS SNS` 
 ​
-You need to supply EPNS a webhook POST URL to `sns` (one for mainnet and one for testnet) to authenticate with and do a handshake request. This code also listens to the incoming notifications. Example is shown below.
+You need to supply PUSH a webhook POST URL to `sns` (one for mainnet and one for testnet) to authenticate with and do a handshake request. This code also listens to the incoming notifications. Example is shown below.
 ​
 ## How to listen to events from `AWS SNS`
 ​
@@ -49,7 +49,7 @@ This is a one-time message confirming if the SNS subscription is successful.
         UnsubscribeURL: 'https://sns.us-east-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-east-1:293359341249:dev-epns-notifications:cc473de2-b46e-462c-95d4-178580487a26'
     }
 
-**Message** is field in the above JSON is the actual notification sent from the EPNS in JSON stringified format.
+**Message** is field in the above JSON is the actual notification sent from the PUSH in JSON stringified format.
 
 #### Message
 
