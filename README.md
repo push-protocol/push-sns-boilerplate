@@ -57,6 +57,7 @@ A sample message when converted to JSON looks like below
 
       {
 	  	"sid": 121,
+		"sender": "0x35B84d6848D16415177c64D64504663b998A6ab4",
 	  	"users": ["0x35B84d6848D16415177c64D64504663b998A6ab4"],
 	  	"payload": {
 	  		"data": {
@@ -85,6 +86,7 @@ A sample message when converted to JSON looks like below
 	  }
 
 - **sid**       - unique id from the push
+- **sender**    - channel address
 - **users**     - list of wallet addresses for which the notification needs to be delivered
 - **payload**   - actual payload that needs to be delivered to the user's device
 - **epoch**     - timestamp when the payload is generated
