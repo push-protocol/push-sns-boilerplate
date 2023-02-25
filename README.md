@@ -57,7 +57,7 @@ A sample message when converted to JSON looks like below
 
       {
 	  	"sid": 121,
-		"sender": "0x35B84d6848D16415177c64D64504663b998A6ab4",
+		"sender": "0x35B84d6848D16415177c64D64504663b998A6ab3",
 	  	"users": ["0x35B84d6848D16415177c64D64504663b998A6ab4"],
 	  	"payload": {
 	  		"data": {
